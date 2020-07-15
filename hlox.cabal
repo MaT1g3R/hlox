@@ -1,0 +1,64 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: decb3213e79e2d8183e7bc54c45ea33d4ea6c9c5bbdfa6939eef6a64667fdeeb
+
+name:           hlox
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/MaT1g3R/hlox#readme>
+homepage:       https://github.com/MaT1g3R/hlox#readme
+bug-reports:    https://github.com/MaT1g3R/hlox/issues
+author:         Peijun Ma
+maintainer:     peijun.ma@pm.me
+copyright:      2020 Peijun Ma
+license:        Apache-2.0
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/MaT1g3R/hlox
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , text
+  default-language: Haskell2010
+
+executable hlox-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hlox
+    , text
+  default-language: Haskell2010
+
+test-suite hlox-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hlox
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hlox
+    , text
+  default-language: Haskell2010
